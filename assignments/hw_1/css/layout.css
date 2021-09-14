@@ -7,7 +7,7 @@
 		John (Jack) O'Neill, UMass Lowell, John_ONeill@student.uml.edu
 		Copyright (c) 2021 by John. All rights reserved. May be freely copied or
 		excerpted for educational purposes with credit to the author.
-		updated by JO on September 14, 2021 at 00:30 AM
+		updated by JO on September 14, 2021 at 04:00 AM
 */
 
 /*	Main Elements	*/
@@ -179,7 +179,6 @@ table {
 	width: 96%;
 	margin: 2%;
 	margin-bottom: 4%;
-	box-sizing: border-box;
 }
 
 table, th, td {
@@ -190,4 +189,19 @@ table, th, td {
 
 td {
 	color: darkred;
+}
+
+aside div table{
+	padding: 0px;
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	width:20%;
+}
+
+aside div table th p{
+	margin: auto;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 50px;
 }
