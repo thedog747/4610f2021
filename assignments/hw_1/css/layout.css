@@ -1,0 +1,193 @@
+/*
+		File: layout.css
+		GUI Assignment: Creating Your First Web Page
+		Description: Create a webpage which exhibits creativity and
+		effort. Content is non-trivial and contains more than would be expected
+		from a non-major taking Introduction to the Internet.
+		John (Jack) O'Neill, UMass Lowell, John_ONeill@student.uml.edu
+		Copyright (c) 2021 by John. All rights reserved. May be freely copied or
+		excerpted for educational purposes with credit to the author.
+		updated by JO on September 14, 2021 at 00:30 AM
+*/
+
+/*	Main Elements	*/
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	width: 1680px;
+	margin: auto;
+	background-color: silver;
+	font-family: Georgia, "Times New Roman", serif;
+}
+
+h1 {
+	background-color: #101010;
+	color: red;
+	letter-spacing: 8px;
+	padding-bottom: 25px;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-top: 25px;
+	border: 5px;
+	border-color: black;
+	border-style: solid;
+}
+
+h2 {
+	background-color: rgb(71,71,71);
+	color: red;
+	letter-spacing: 5px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 15px;
+}
+
+section h2 {
+	border: 2px;
+	border-color: black;
+	border-style: solid;
+}
+
+section {
+	padding-left: 7px;
+	margin-left: 10px;
+	margin-right: 10px;
+	float: left;
+	width: 1050px;
+}
+
+/*	Footer Element	*/
+
+address {
+	font-family: "Arial Black", Gadget, sans-serif;
+	color: rgb(255,64,64);
+	text-align: center;
+	clear: both;
+	font-variant:  small-caps;
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: black;
+}
+
+/*	Navigation Elements	*/
+
+nav {
+	width: 250px;
+	background-color: grey;
+	float: left;
+	margin-top: 20px;
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+}
+
+nav p {	
+	margin: 0px;
+}
+
+nav p a {
+	color: white;
+	padding: 10px;
+	padding-left: 40px;
+	padding-right: 55px;
+	line-height: 3em;
+	font-size: 20px;
+	display: block;
+}
+
+nav div p {
+	background-color: #380202
+}
+
+nav p:hover { /* the :hover modifier makes the button change color on rollover */
+	background-color: darkred;
+}
+
+/*	Aside Elements	*/
+
+aside {
+	margin:  0px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 340px;
+	float: right;
+	font-size: 15px;
+	background-color: grey;
+	border-width: 2px;
+	border-style: solid;
+	border-color: black;
+	color: #380202;
+}
+
+
+aside dt {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: justify;
+	line-height: 1.5em;
+	font-weight: bold;
+	font-size: 16px;
+	border: 3px solid #380202;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+aside dd {
+	padding: 5px;
+	color: darkred;
+	text-align: justify;
+	line-height: 1.5em;
+	font-style: italic;
+	border: 3px solid #380202;
+	margin-top: -3px;
+	margin-bottom: 5px;
+	margin-right: 3px;
+}
+
+aside h2 {
+	text-align: center;
+	font-size: 24px;
+	color: red;
+}
+
+/*	Image Elements	*/
+
+section img {
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: white;
+}
+
+body div img {
+	margin-top: 10px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: darkred;
+}
+
+/*	Table Elements	*/
+
+table {
+	padding: 4px;
+	width: 96%;
+	margin: 2%;
+	margin-bottom: 4%;
+	box-sizing: border-box;
+}
+
+table, th, td {
+	color: #380202;
+	text-align: left;
+	border: 3px solid #380202;
+}
+
+td {
+	color: darkred;
+}
