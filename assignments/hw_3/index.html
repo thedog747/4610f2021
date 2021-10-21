@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+		File: index.html
+		GUI Assignment: Creating an Interactive Dynamic Table
+		Description: Create a table completely dynamically based on
+		parameters entered in an HTML form.
+		John (Jack) O'Neill, UMass Lowell, John_ONeill@student.uml.edu
+		Copyright (c) 2021 by John. All rights reserved. May be freely copied or
+		excerpted for educational purposes with credit to the author.
+		updated by JO on October 21, 2021 at 9:47 AM
+		-->
+		<meta charset="UTF-8">
+		<meta name="description" content="Dynamic Multiplication Table">
+		<meta name="author" content="John O'Neill">
+		<title>Dynamic Multiplication Table</title>
+	</head>
+	<style>
+		body{
+		background-color:black;
+		color:white;
+		}
+		table {
+		padding:4px;
+		overflow-x:auto;
+		overflow-y:auto;
+		display:block;
+		max-height:93vh;
+		}
+		table, th, td {
+		text-align:right;
+		border:3px solid #000000;
+		}
+		td {
+		color:black;
+		background-color:white;
+		}
+		th{
+		color:#FFFFFF;
+		background-color:#000000;
+		border-color:#FFFFFF;
+		position:sticky;
+		top:0;
+		Low:0;
+		min-width:5ch;
+		}
+		#table_container {
+		float:right;
+		max-width:85%;
+		margin:auto;
+		margin-right:2%;
+		}
+		#gui {
+		width:10%;
+		height:10%;
+		position:absolute;
+		}
+		input {
+		width:100%;
+		}
+	</style>
+	<body>
+		<!Empty table to be populated.>
+		<div id="table_container">
+			<table id="table_mult">
+			</table>
+		</div>
+		<!GUI for value input and debug/error printouts>
+		<div id="gui">
+			<form>
+				<label for="lrow">Row Low End</label>
+				<input type="string" id="lrow" step="0.1" name="Row Low End" placeholder="Row Low End">
+				<br>
+				<label for="hrow">Row High End</label>
+				<input type="string" id="hrow" step="0.1" name="Row High End" placeholder="Row High End">
+				<br>
+				<br>
+				<label for="lcol">Column Low End</label>
+				<input type="string" id="lcol" step="0.1" name="Column Low End" placeholder="Column Low End">
+				<br>
+				<label for="hcol">Column High End</label>
+				<input type="string" id="hcol" step="0.1" name="Column High End" placeholder="Column High End">
+				<br>
+				<br>
+				<input type="button" value="Generate Table" onclick="makeTable();">
+			</form>
+			<a id="debug1">R(0,</a>
+			<a id="debug2"> 0), </a>
+			<a id="debug3">C(0,</a>
+			<a id="debug4"> 0)</a>
+			<br>
+			<a id="debug5">Empty table.</a>
+			<br>
+			<br>
+		</div>
+	</body>
+	<script>
+		var table = document.getElementById("table_mult");
+		function makeTable() {
+			var lrow = Math.floor(document.getElementsByName("Row Low End")[0].value);
+			var hrow = Math.floor(document.getElementsByName("Row High End")[0].value);
+			var lcol = Math.floor(document.getElementsByName("Column Low End")[0].value);
+			var hcol = Math.floor(document.getElementsByName("Column High End")[0].value);
+			
+			//error handling
+			if (isNaN(lrow) || isNaN(hrow) || isNaN(lcol) || isNaN(hcol)){
+				document.getElementById("debug5").innerHTML = "Invalid table: Noncompliant string input";
+				return;
+			}
+			
+			if (Math.abs(Math.abs(lrow) > 50 || Math.abs(hrow) > 50 || Math.abs(lcol) > 50 || Math.abs(hcol) > 50)){
+				document.getElementById("debug5").innerHTML = "Invalid table: Bound size is -50 < x&y < 50";
+				return;
+			}
+			
+			if ((lrow > hrow) || (lcol > hcol)){
+				document.getElementById("debug5").innerHTML = "Invalid table: Low bound cannot exceed high bound";
+				return;
+			}
+			
+			//populate row&column range debug output
+			document.getElementById("debug1").innerHTML = "R(" + lrow + ", ";
+			document.getElementById("debug2").innerHTML = hrow + "),";
+			document.getElementById("debug3").innerHTML = "C(" + lcol + ", ";
+			document.getElementById("debug4").innerHTML = hcol + ")";
+			document.getElementById("debug5").innerHTML = "Valid table.";
+			
+			//ensure previous table is wiped before new one is populated
+			var row_count = table.rows.length;
+			if (row_count != 0){
+				var r;
+				for (r = 0; r < row_count; r++){
+					table.deleteRow(0);
+				}
+			}
+			
+			//first row has a function separate from other rows because the cells are populated differently
+			firstRow(hrow, lrow);
+			var p;
+			for (p = 0; p <= (hcol - lcol); p++){
+				otherRow(hrow, lrow, p + (Math.sign(lcol) * Math.abs(lcol)));
+			}
+		}
+		
+		//populate the first row
+		function firstRow(hrow, lrow){
+			var row = table.insertRow();
+			var i;
+			for (i = 0; i < hrow-lrow + 2; i++){
+				if (i == 0){
+					var head = document.createElement("th");
+					head.innerHTML = " ";
+					row.appendChild(head);
+				}
+				else{
+					var head = document.createElement("th");
+					head.innerHTML = ((i - 1) + (Math.sign(lrow) * Math.abs(lrow)));
+					row.appendChild(head);
+				}
+				
+			}
+		}
+		
+		function otherRow(hrow, lrow, mult){
+			var row = table.insertRow();
+			var i;
+			for (i = 0; i < hrow-lrow + 2; i++){
+				if (i == 0){
+					var head = document.createElement("th");
+					head.innerHTML = mult;
+					row.appendChild(head);
+				}
+				else{
+					var head = document.createElement("td");
+					head.innerHTML = (((i - 1) + (Math.sign(lrow) * Math.abs(lrow))) * mult);
+					row.appendChild(head);
+				}
+				
+			}
+		}
+	</script>
+</html>
