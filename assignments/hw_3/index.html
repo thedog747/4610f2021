@@ -9,7 +9,7 @@
 		John (Jack) O'Neill, UMass Lowell, John_ONeill@student.uml.edu
 		Copyright (c) 2021 by John. All rights reserved. May be freely copied or
 		excerpted for educational purposes with credit to the author.
-		updated by JO on October 21, 2021 at 9:47 AM
+		updated by JO on October 21, 2021 at 10:08 AM
 		-->
 		<meta charset="UTF-8">
 		<meta name="description" content="Dynamic Multiplication Table">
@@ -20,6 +20,7 @@
 		body{
 		background-color:black;
 		color:white;
+		font-family:'Courier New', monospace;
 		}
 		table {
 		padding:4px;
@@ -135,45 +136,26 @@
 				}
 			}
 			
-			//first row has a function separate from other rows because the cells are populated differently
-			firstRow(hrow, lrow);
+			//make the top row first since it is formatted differently
+			createRow(hrow, lrow, NaN);
 			var p;
 			for (p = 0; p <= (hcol - lcol); p++){
-				otherRow(hrow, lrow, p + (Math.sign(lcol) * Math.abs(lcol)));
+				createRow(hrow, lrow, p + (Math.sign(lcol) * Math.abs(lcol)));
 			}
 		}
 		
-		//populate the first row
-		function firstRow(hrow, lrow){
-			var row = table.insertRow();
+		function createRow(hrow, lrow, mult){
+ 			var row = table.insertRow();
 			var i;
 			for (i = 0; i < hrow-lrow + 2; i++){
 				if (i == 0){
 					var head = document.createElement("th");
-					head.innerHTML = " ";
+					head.innerHTML = (isNaN(mult) ? " " : mult);
 					row.appendChild(head);
 				}
 				else{
-					var head = document.createElement("th");
-					head.innerHTML = ((i - 1) + (Math.sign(lrow) * Math.abs(lrow)));
-					row.appendChild(head);
-				}
-				
-			}
-		}
-		
-		function otherRow(hrow, lrow, mult){
-			var row = table.insertRow();
-			var i;
-			for (i = 0; i < hrow-lrow + 2; i++){
-				if (i == 0){
-					var head = document.createElement("th");
-					head.innerHTML = mult;
-					row.appendChild(head);
-				}
-				else{
-					var head = document.createElement("td");
-					head.innerHTML = (((i - 1) + (Math.sign(lrow) * Math.abs(lrow))) * mult);
+					var head = document.createElement(isNaN(mult) ? "th" : "td");
+					head.innerHTML = (((i - 1) + (Math.sign(lrow) * Math.abs(lrow))) * (isNaN(mult) ? 1 : mult));
 					row.appendChild(head);
 				}
 				
