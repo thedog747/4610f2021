@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			File: index.html
+			GUI Assignment: Creating an Interactive Dynamic Table
+			Description: Create a table completely dynamically based on
+			parameters entered in an HTML form.
+			John (Jack) O'Neill, UMass Lowell, John_ONeill@student.uml.edu
+			Copyright (c) 2021 by John. All rights reserved. May be freely copied or
+			excerpted for educational purposes with credit to the author.
+			updated by JO on October 21, 2021 at 10:08 AM
+			-->
+		<meta charset="UTF-8">
+		<meta name="description" content="Dynamic Multiplication Table">
+		<meta name="author" content="John O'Neill">
+		<title>Dynamic Multiplication Table</title>
+
+		<link rel="stylesheet" href="css/style.css"/>
+
+	</head>
+	<body>
+		<!Empty table to be populated.>
+		<div id="table_container">
+			<table id="table_mult">
+			</table>
+		</div>
+		<!GUI for value input and debug/error printouts>
+		<div id="gui">
+			<form id="mform" name="mform" method="GET">
+				<label for="lrow">Row Low End</label>
+				<input type="string" id="lrow" step="0.1" name="lrow" placeholder="Row Low End">
+				<br>
+				<label for="hrow">Row High End</label>
+				<input type="string" id="hrow" step="0.1" name="hrow" placeholder="Row High End">
+				<br>
+				<br>
+				<label for="lcol">Column Low End</label>
+				<input type="string" id="lcol" step="0.1" name="lcol" placeholder="Column Low End">
+				<br>
+				<label for="hcol">Column High End</label>
+				<input type="string" id="hcol" step="0.1" name="hcol" placeholder="Column High End">
+				<br>
+				<br>
+				<input type="button" value="Generate Table" onclick="makeTable();">
+			</form>
+			<a id="debug1">R(0,</a>
+			<a id="debug2"> 0), </a>
+			<a id="debug3">C(0,</a>
+			<a id="debug4"> 0)</a>
+			<br>
+			<a id="debug5">Empty table.</a>
+			<br>
+			<br>
+		</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
+	<script src="js/main.js"></script>
+</html>

@@ -1,0 +1,43 @@
+body{
+background-color:black;
+color:white;
+font-family:'Courier New', monospace;
+}
+table {
+padding:4px;
+overflow-x:auto;
+overflow-y:auto;
+display:block;
+max-height:93vh;
+}
+table, th, td {
+text-align:right;
+border:3px solid #000000;
+}
+td {
+color:black;
+background-color:white;
+}
+th{
+color:#FFFFFF;
+background-color:#000000;
+border-color:#FFFFFF;
+position:sticky;
+top:0;
+Low:0;
+min-width:5ch;
+}
+#table_container {
+float:right;
+max-width:85%;
+margin:auto;
+margin-right:2%;
+}
+#gui {
+width:10%;
+height:10%;
+position:absolute;
+}
+input {
+width:100%;
+}
