@@ -1,3 +1,15 @@
+/*
+	File: style.css
+	GUI Assignment: Using the jQuery Plugin/UI with Your Dynamic Table
+	Description: Use JQuery validation and assosiated UI library
+	to verify the veracity of values inputted into the form, and
+	dynamically create the table while 
+	John (Jack) O'Neill, UMass Lowell, John_ONeill@student.uml.edu
+	Copyright (c) 2021 by John. All rights reserved. May be freely copied or
+	excerpted for educational purposes with credit to the author.
+	updated by JO on November 21, 2021 at 1:02 AM
+*/
+
 body{
 background-color:black;
 color:white;
@@ -29,15 +41,28 @@ min-width:5ch;
 }
 #table_container {
 float:right;
-max-width:85%;
+max-width:80%;
+display:block;
 margin:auto;
 margin-right:2%;
+max-height:85%;
+margin-bottom:25px;
 }
 #gui {
-width:10%;
+width:15%;
 height:10%;
-position:absolute;
+position:relative;
+display:block;
+max-height:85%;
 }
 input {
 width:100%;
+}
+#funny{
+position:relative;
+}
+#tabs{
+max-height:10%;
+overflow-x: auto;
+clear:both;
 }
