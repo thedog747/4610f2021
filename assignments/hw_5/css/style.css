@@ -1,0 +1,127 @@
+/*
+	File: style.css
+	GUI Assignment: Implementing a Bit of Scrabble with Drag-and-Drop
+	Description:  An exercise to gain you additional experience
+	working with the jQuery UI and to pull together much of what we’ve
+	been doing throughout the semester by implementing a bit of the
+	game of Scrabble using drag-and-drop.
+	John (Jack) O'Neill, UMass Lowell, John_ONeill@student.uml.edu
+	Copyright (c) 2021 by John. All rights reserved. May be freely copied or
+	excerpted for educational purposes with credit to the author.
+	updated by JO on December 11, 2021 at 5:27 AM
+*/
+
+
+body {
+	color: white;
+	background-color: black;
+}
+
+/* Title */
+
+#title{
+	width:fit-content;
+	margin:auto;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+/* Heuristics */
+
+#stat2{
+	width:fit-content;
+	margin:auto;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+#stat1{
+	width:fit-content;
+	margin:auto;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+/* Board & Assoc. Elements */
+
+#board{
+	width:fit-content;
+	margin:auto;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.slot{
+	width:80px;
+	height:80px;
+	margin:10px;
+	margin-top:0px;
+	margin-bottom:0px;
+	display:inline-block;
+}
+
+.slot img{
+	width:80px;
+	height:80px;
+	margin:0px;
+	position: absolute;
+}
+
+/* Player Hand & Assoc. Elements */
+
+#blocks{
+	width:740px;
+	height:182px;
+	margin:auto;
+	margin-top:50px;
+	margin-bottom:50px;
+	background-image:url("../data/scrabble-tile-holder.png");
+	background-repeat: no-repeat;
+	background-position: 50px;
+
+}
+
+.blockholder{
+	width:80px;
+	height:80px;
+	margin:11px;
+	margin-top:40px;
+	margin-bottom:0px;
+	display:inline-block;
+	outline: 5px solid white;
+}
+
+/* Block Objects */
+
+.block{
+	width:80px;
+	height:80px;
+	margin:0px;
+	display:inline-block;
+	
+}
+
+.block img{
+	width:80px;
+	height:80px;
+	margin:0px;
+}
+
+/* Buttons */
+
+#buttons{
+	width:fit-content;
+	margin:auto;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+/*
+	This css stipulates that draggable elements will always be displayed above all other elements
+	I credit the following question on Stack Overflow for this improvement:
+	https://stackoverflow.com/questions/21386306/css-always-on-top/21386429
+	Thanks to all contributors to this question!
+*/
+.ui-draggable-dragging {
+    z-index:99999;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--
+			File: index.html
+			GUI Assignment: Implementing a Bit of Scrabble with Drag-and-Drop
+			Description:  An exercise to gain you additional experience
+			working with the jQuery UI and to pull together much of what we’ve
+			been doing throughout the semester by implementing a bit of the
+			game of Scrabble using drag-and-drop.
+			John (Jack) O'Neill, UMass Lowell, John_ONeill@student.uml.edu
+			Copyright (c) 2021 by John. All rights reserved. May be freely copied or
+			excerpted for educational purposes with credit to the author.
+			updated by JO on December 11, 2021 at 5:32 AM
+			-->
+		<meta charset="UTF-8">
+		<meta name="description" content="Dynamic Multiplication Table">
+		<meta name="author" content="John O'Neill">
+		<title>Dynamic Multiplication Table</title>
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"/>
+	</head>
+	<body>
+	
+		<!-- Page title -->
+		<h1 id="title">One line of Scrabble.</h1>
+		
+		<!-- Game Heuristics -->
+		<h2 id="stat2">High Score: 0</h2>
+		<h2 id="stat1">Score: 0</h2>
+		
+		<!-- The game board -->
+		<div id="board">
+			<div id="slot-0" class="slot"><img src="data/tiles/Scrabble_Slot_Single.jpg"></div>
+			<div id="slot-1" class="slot double"><img src="data/tiles/Scrabble_Slot_Double.jpg"></div>
+			<div id="slot-2" class="slot"><img src="data/tiles/Scrabble_Slot_Single.jpg"></div>
+			<div id="slot-3" class="slot"><img src="data/tiles/Scrabble_Slot_Single.jpg"></div>
+			<div id="slot-4" class="slot"><img src="data/tiles/Scrabble_Slot_Single.jpg"></div>
+			<div id="slot-5" class="slot double"><img src="data/tiles/Scrabble_Slot_Double.jpg"></div>
+			<div id="slot-6" class="slot"><img src="data/tiles/Scrabble_Slot_Single.jpg"></div>
+		</div>
+		
+		<!-- The player's hand -->
+		<div id="blocks">
+			<div id="blockholder-0" class="blockholder">
+			</div>
+			<div id="blockholder-1" class="blockholder">
+			</div>
+			<div id="blockholder-2" class="blockholder">
+			</div>
+			<div id="blockholder-3" class="blockholder">
+			</div>
+			<div id="blockholder-4" class="blockholder">
+			</div>
+			<div id="blockholder-5" class="blockholder">
+			</div>
+			<div id="blockholder-6" class="blockholder">
+			</div>
+		</div>
+		
+		<!-- A bar for both buttons -->
+		<div id="buttons">
+			<button id="next" onclick="apply_score()" disabled>Next Word</button>
+			<button id="restart" onclick="restart()">New Game</button>
+		</div>
+		
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script src="js/main.js"></script>
+</html>
